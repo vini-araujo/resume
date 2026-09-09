@@ -23,5 +23,3 @@ You can also open `resume.tex` in Overleaf and compile it there.
 - [LinkedIn](https://www.linkedin.com/in/vini-araujo13)
 - [GitHub](https://github.com/vini-araujo)
 - [Portfolio](https://portfolio-vini-araujos-projects.vercel.app)
-
-> The public resume intentionally omits my phone number.
