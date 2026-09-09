@@ -1,0 +1,157 @@
+\documentclass[10pt,letterpaper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=0.45in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{microtype}
+
+% ---------- Global formatting ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{
+  leftmargin=0.14in,
+  label=\textbullet,
+  itemsep=0pt,
+  topsep=0.6pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\titleformat{\section}
+  {\fontsize{10.5}{11.5}\selectfont\bfseries\uppercase}
+  {}{0pt}{}
+  [\vspace{-2pt}\titlerule]
+\titlespacing*{\section}{0pt}{3.3pt}{1.5pt}
+
+% ---------- Helpers ----------
+\newcommand{\resumeHeader}[1]{%
+  \begin{center}
+    {\fontsize{18}{19}\selectfont\bfseries #1}\\[-3pt]
+  \end{center}
+}
+
+\newcommand{\contactLine}{%
+  \begin{center}
+  \fontsize{8.5}{9.3}\selectfont
+  \href{mailto:araujovd1522@uwec.edu}{araujovd1522@uwec.edu}
+  \;|\;
+  \href{https://www.linkedin.com/in/vini-araujo13}{linkedin.com/in/vini-araujo13}
+  \;|\;
+  \href{https://github.com/vini-araujo}{github.com/vini-araujo}
+  \;|\;
+  \href{https://portfolio-vini-araujos-projects.vercel.app}{portfolio}
+  \end{center}
+}
+
+\newcommand{\resumeEntryTech}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} \;|\; #2 & #3 \\
+    \textit{#4} &
+  \end{tabularx}
+}
+
+\begin{document}
+\fontsize{8.7}{9.7}\selectfont
+
+\resumeHeader{Vini Araujo}
+\contactLine
+\vspace{-5pt}
+
+% ---------- Education ----------
+\section{Education}
+\begin{tabularx}{\textwidth}{@{}X r@{}}
+  \textbf{University of Wisconsin -- Eau Claire} & \textbf{Expected May 2027} \\
+  Bachelor of Science in Computer Science \;|\; GPA: 3.93 \;|\; Scott Seawell Memorial Scholarship Recipient &
+\end{tabularx}
+
+% ---------- Experience ----------
+\section{Experience}
+\resumeEntryTech
+  {Software Engineering Intern}
+  {React Native, TypeScript, Expo, Supabase, PostgreSQL}
+  {Mar 2026 -- Present}
+  {Susty Inc. \;|\; Hudson, WI}
+\begin{itemize}
+  \item Architected Susty School's daily quiz feature end-to-end, designing the PostgreSQL/Supabase schema and building the React Native UI to support user streaks, badges, and level progression.
+  \item Engineered backend logic using RPCs, advisory locks, and per-user timezone handling to enforce daily point caps and prevent duplicate answers during concurrent writes.
+  \item Shipped 1:1 and group messaging with Supabase Realtime, including conversation lifecycle, unread counts, image messages, debounced push notifications, and per-user rate limits.
+  \item Built a barcode-scanning flow backed by brand-alias resolution RPCs, with both systems covered by pgTAP database tests.
+  \item Authored 31 PostgreSQL migrations across RLS, ad tracking, and tested business logic; built GitHub Actions CI/CD for EAS releases and merged 77 PRs while reviewing 39 over five months.
+\end{itemize}
+
+\resumeEntryTech
+  {Web Developer / IT Intern}
+  {HTML, CSS, JavaScript, Ruby on Rails, GitLab}
+  {Nov 2025 -- Present}
+  {University of Wisconsin -- Eau Claire \;|\; Eau Claire, WI}
+\begin{itemize}
+  \item Own recurring updates across 3 university sites serving 12,000+ students, staff, and faculty, balancing accuracy, accessibility, and mobile-first usability.
+  \item Shipped time-sensitive production updates to the JigsUp ice-fishing competition website, supporting event operations generating \$40,000+ in revenue.
+\end{itemize}
+
+\resumeEntryTech
+  {Computer Science Teaching Assistant}
+  {Java}
+  {Sep 2024 -- Dec 2024}
+  {University of Wisconsin -- Eau Claire \;|\; Eau Claire, WI}
+\begin{itemize}
+  \item Assisted professor and 25 students in Intro to Programming in Java through lab sessions, assignment grading, office hours, and one-on-one debugging support.
+  \item Explained programming fundamentals and debugging strategies in clear, beginner-friendly language to help students resolve errors independently.
+\end{itemize}
+
+% ---------- Research ----------
+\section{Undergraduate Research}
+\resumeEntryTech
+  {AI Research Assistant --- Nursing Simulation}
+  {Python, LLMs, RAG, Ollama, Speech AI}
+  {Jun 2026 -- Present}
+  {University of Wisconsin -- Eau Claire \;|\; Eau Claire, WI}
+\begin{itemize}
+  \item Developed an interactive nursing simulation supporting typed and voice conversations using Python, Streamlit, Ollama, Faster-Whisper, Edge TTS, and WebRTC voice activity detection.
+  \item Implemented streaming LLM generation and segmented text-to-speech, reducing median time-to-first-text response by 77.6\%, from 2.96s to 0.55s.
+  \item Built end-to-end latency instrumentation across speech recognition, LLM generation, and TTS playback, achieving 3.03s median end-of-speech-to-first-audio latency.
+\end{itemize}
+
+\resumeEntryTech
+  {Undergraduate Research Assistant}
+  {Python, PyTorch/Ultralytics, YOLOv8, BDD100K}
+  {Dec 2025 -- Present}
+  {University of Wisconsin -- Eau Claire \;|\; Eau Claire, WI}
+\begin{itemize}
+  \item Fine-tuned a YOLOv8n road-object detector for 50 epochs on BDD100K, covering 10 road-scene object classes.
+  \item Achieved 50.4\% precision, 28.5\% recall, 27.3\% mAP@50, and 14.0\% mAP@50--95 on the full-data baseline; achieved 38.3\% mAP@50 in a matched-data experiment.
+  \item Engineered a Python/Ultralytics pipeline for annotation conversion, dataset validation, class-imbalance experiments, and GPU training on a SLURM-based HPC cluster.
+\end{itemize}
+
+% ---------- Projects ----------
+\section{Projects}
+\resumeEntryTech
+  {Ordyn Life}
+  {Next.js, FastAPI, Docker, AWS, Cloudflare}
+  {Jun 2026 -- Present}
+  {}
+\begin{itemize}
+  \item Built a full-stack productivity platform with a unified activity-tracking system for workouts, running, LeetCode, reading, journaling, and GitHub commits, aggregating user data into progress, frequency, and consistency insights.
+  \item Implemented CI/CD and production infrastructure using Docker, AWS S3/CloudFront, and Cloudflare to automate the path from development to deployment.
+\end{itemize}
+
+% ---------- Skills ----------
+\section{Technical Skills}
+\textbf{Languages:} Java, Python, TypeScript, JavaScript, SQL, C, Ruby, HTML/CSS\\
+\textbf{Frameworks \& Databases:} React, React Native, Next.js, FastAPI, Node.js, PostgreSQL, Supabase, SQLAlchemy\\
+\textbf{Cloud \& DevOps:} Docker, AWS S3, CloudFront, Cloudflare, GitHub Actions, GitLab CI/CD, EAS Build\\
+\textbf{ML/Data:} YOLOv8, scikit-learn, Pandas, NumPy, XGBoost, PyTorch
+
+% ---------- Extracurriculars ----------
+\section{Extracurriculars}
+Student Association for Computing Machinery (SACM) \;|\; Track \& Field
+
+\end{document}
