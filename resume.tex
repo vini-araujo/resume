@@ -1,0 +1,158 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage[sfdefault]{arimo}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{iftex}
+
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=black,
+  pdfborder={0 0 0}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\emergencystretch=1em
+\urlstyle{same}
+
+% Typography matching the uploaded resume.
+\newcommand{\namefont}{\fontsize{17.06}{18.8}\selectfont\bfseries}
+\newcommand{\contactfont}{\fontsize{8.54}{9.5}\selectfont}
+\newcommand{\sectionfont}{\fontsize{9.96}{10.9}\selectfont\bfseries}
+\newcommand{\entryfont}{\fontsize{9.48}{10.92}\selectfont}
+\newcommand{\bulletfont}{\fontsize{9.00}{10.32}\selectfont}
+\newcommand{\projectbulletfont}{\fontsize{9.48}{10.92}\selectfont}
+
+\newcommand{\resumesection}[1]{%
+  \vspace{2.15pt}%
+  {\sectionfont #1}\par
+  \vspace{0.15pt}\hrule height 0.45pt\vspace{4.45pt}%
+}
+
+\newcommand{\twocolrow}[2]{%
+  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    #1 & #2
+  \end{tabular*}\par
+}
+
+\newcommand{\resbullet}[1]{%
+  {\bulletfont\noindent\hangindent=11.52pt\hangafter=1\makebox[11.52pt][l]{\textbullet\hspace{3.4pt}}#1\par\vspace{0.95pt}}%
+}
+
+\newcommand{\projectbullet}[1]{%
+  {\projectbulletfont\noindent\hangindent=17.52pt\hangafter=1\makebox[6pt][l]{\textbullet\hspace{2pt}}#1\par\vspace{0.95pt}}%
+}
+
+\begin{document}
+
+\vspace*{-5.9pt}
+\begin{center}
+  {\namefont Vini Araujo}\par
+  \vspace{-1.65pt}
+  {\contactfont
+  (715) 379-3370 \textbar{} araujovd1522@uwec.edu \textbar{}
+  \href{https://linkedin.com/in/vini-araujo13}{linkedin.com/in/vini-araujo13} \textbar{}
+  \href{https://github.com/vini-araujo}{github.com/vini-araujo} \textbar{}
+  \href{https://portfolio-vini-araujos-projects.vercel.app}{portfolio-vini-araujos-projects.vercel.app}}
+\end{center}
+\vspace{-8.7pt}
+
+\resumesection{EDUCATION}
+{\entryfont
+\twocolrow{\textbf{University of Wisconsin - Eau Claire}}{Expected May 2027}
+Bachelor of Science in Computer Science \textbf{\textbar{} GPA: 3.93 \textbar{} Scott Seawell Memorial Scholarship Recipient}\par
+}
+
+\resumesection{EXPERIENCE}
+{\entryfont
+\twocolrow{\textbf{Software Engineering Intern} \textit{\textbar{} React Native, TypeScript, Expo, Supabase, PostgreSQL}}{Mar 2026 - Present}
+\textit{Susty Inc. \textbar{} Hudson, WI}\par
+}
+\resbullet{Architected Susty School's daily quiz feature end-to-end, designing the PostgreSQL/Supabase schema and building the React Native\\
+UI to support user streaks, badges, and level progression.}
+\resbullet{Engineered backend logic using RPCs, advisory locks, and per-user timezone handling to enforce daily point caps and prevent\\
+duplicate answers during concurrent writes.}
+\resbullet{Shipped 1:1 and group messaging with Supabase Realtime, including conversation lifecycle, unread counts, image messages,\\
+debounced push notifications, and per-user rate limits.}
+\resbullet{Built a barcode-scanning flow backed by brand-alias resolution RPCs, with both systems covered by pgTAP database tests.}
+\resbullet{Authored 31 PostgreSQL migrations across RLS, ad tracking, and tested business logic; built GitHub Actions CI/CD for EAS releases\\
+and \textbf{merged 77 PRs while reviewing 39} over five months.}
+
+\vspace{0.25pt}
+{\entryfont
+\twocolrow{\textbf{Web Developer / IT Intern} \textit{\textbar{} HTML, CSS, JavaScript, Ruby on Rails, GitLab}}{Nov 2025 - Present}
+\textit{University of Wisconsin - Eau Claire \textbar{} Eau Claire, WI}\par
+}
+\resbullet{Own recurring updates across 3 university sites serving \textbf{12,000+} students, staff, and faculty, balancing accuracy, accessibility, and\\
+mobile-first usability.}
+\resbullet{Shipped time-sensitive production updates to the JigsUp ice-fishing competition website, supporting event operations \textbf{generating}\\
+\textbf{\$40,000+ in revenue.}}
+
+\vspace{0.2pt}
+{\entryfont
+\twocolrow{\textbf{Computer Science Teaching Assistant} \textit{\textbar{} Java}}{Sep 2024 - Dec 2024}
+\textit{University of Wisconsin - Eau Claire \textbar{} Eau Claire, WI}\par
+}
+\resbullet{Assisted professor and 25 students in Intro to Programming in Java through lab sessions, assignment grading, office hours, and one-\\
+on-one debugging support.}
+\resbullet{Explained programming fundamentals and debugging strategies in clear, beginner-friendly language to help students resolve errors\\
+independently.}
+
+\resumesection{UNDERGRADUATE RESEARCH}
+{\entryfont
+\twocolrow{\textbf{AI Research Assistant \textemdash{} Nursing Simulation \textbar{} Python, LLMs, RAG, Ollama, Speech AI}}{Jun 2026 - Present}
+\textit{University of Wisconsin--Eau Claire \textbar{} Eau Claire, WI}\par
+}
+\resbullet{Developed an interactive nursing simulation supporting typed and voice conversations using Python, Streamlit, Ollama, Faster-\\
+Whisper, Edge TTS, and WebRTC voice activity detection.}
+\resbullet{Implemented streaming LLM generation and segmented text-to-speech, reducing median \textbf{time-to-first-text response by 77.6\%,}\\
+\textbf{from 2.96s to 0.55s.}}
+\resbullet{Built end-to-end latency instrumentation across speech recognition, LLM generation, and TTS playback, achieving \textbf{3.03s median end-}\\
+\textbf{of-speech-to-first-audio latency.}}
+
+\vspace{0.2pt}
+{\entryfont
+\twocolrow{\textbf{Undergraduate Research Assistant} \textit{\textbar{} Python, PyTorch/Ultralytics, YOLOv8, BDD100K}}{Dec 2025 - Present}
+\textit{University of Wisconsin - Eau Claire \textbar{} Eau Claire, WI}\par
+}
+\resbullet{Fine-tuned a YOLOv8n road-object detector for 50 epochs on BDD100K, covering 10 road-scene object classes.}
+\resbullet{Achieved \textbf{50.4\% precision, 28.5\% recall, 27.3\% mAP@50, and 14.0\% mAP@50--95} on the full-data baseline; achieved 38.3\%\\
+mAP@50 in a matched-data experiment.}
+\resbullet{Engineered a Python/Ultralytics pipeline for annotation conversion, dataset validation, class-imbalance experiments, and GPU training\\
+on a SLURM-based HPC cluster.}
+
+\resumesection{PROJECTS}
+{\entryfont
+\twocolrow{\textbf{Ordyn Life} \textit{\textbar{} Next.js, FastAPI, Docker, AWS, Cloudflare}}{Jun 2026 - Present}
+}
+\projectbullet{Built a full-stack productivity platform with a unified activity-tracking system for workouts, running, LeetCode, reading,\\
+journaling, and GitHub commits, aggregating user data into progress, frequency, and consistency insights.}
+\projectbullet{Implemented CI/CD and production infrastructure using Docker, AWS S3/CloudFront, and Cloudflare to automate the path\\
+from development to deployment.}
+
+\resumesection{TECHNICAL SKILLS}
+{\entryfont
+\textbf{Languages:} Java, Python, TypeScript, JavaScript, SQL, C, Ruby, HTML/CSS\par
+\textbf{Frameworks \& Databases:} React, React Native, Next.js, FastAPI, Node.js, PostgreSQL, Supabase, SQLAlchemy\par
+\textbf{Cloud \& DevOps:} Docker, AWS S3, CloudFront, Cloudflare, GitHub Actions, GitLab CI/CD, EAS Build\par
+\textbf{ML/Data:} YOLOv8, scikit-learn, Pandas, NumPy, XGBoost, PyTorch\par
+}
+
+\resumesection{EXTRACURRICULARS}
+{\entryfont\textbf{Student Association for Computing Machinery (SACM)} \quad\textbar\quad \textbf{Track \& Field}\par}
+
+\end{document}
